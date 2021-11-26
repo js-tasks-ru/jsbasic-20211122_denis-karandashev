@@ -1,20 +1,9 @@
-/**
- * Эту функцию трогать не нужно
- */
 function print(text) {
   console.log(text);
 }
 
-/**
- * Эту функцию нужно поменять так,
- * чтобы функция sayHello работала корректно
- */
 function isValid(name) {
-  res = true;
-  if (!name || name.indexOf(' ') > -1 || name.length < 4) {
-    res = false;
-  }
-  return res;
+  return !!name && !name.includes(' ') && name.length >= 4;
 }
 
 function sayHello() {
