@@ -12,7 +12,6 @@ export default class ProductCard {
   }
 
   get elem() {
-    console.log(this.component);
     return this.component;
   }
 
