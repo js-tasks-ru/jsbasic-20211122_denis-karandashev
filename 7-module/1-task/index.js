@@ -18,8 +18,6 @@ export default class RibbonMenu {
     const rightBtn = ribbonHTML.querySelector(".ribbon__arrow_right");
     const ribbonItems = ribbonHTML.querySelectorAll(".ribbon__item");
 
-    // console.log(ribbonItem);
-
     leftBtn.addEventListener("click", () => {
       ribbonInner.scrollBy(-350, 0);
     });
