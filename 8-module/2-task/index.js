@@ -5,12 +5,6 @@ export default class ProductGrid {
   constructor(products) {
     this.products = products;
     this.filters = {};
-    // this.filters = {
-    //   noNuts: true, // true/false
-    //   vegeterianOnly: false, // true/false
-    //   maxSpiciness: 3, // числа от 0 до 4
-    //   category: 'soups' // уникальный идентификатор категории товара
-    // };
   }
 
   get elem() {
@@ -27,7 +21,6 @@ export default class ProductGrid {
   `);
     const list = elem.querySelector(".products-grid__inner");
     for (const p of filteredProducts) {
-      // console.log(p.vegeterian === true);
       const card = new ProductCard(p).elem;
       list.append(card);
     }
