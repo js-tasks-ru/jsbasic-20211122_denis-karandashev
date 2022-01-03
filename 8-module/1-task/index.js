@@ -46,7 +46,7 @@ export default class CartIcon {
   updatePosition() {
     if (this.elem.offsetWidth != 0) {
       let initialTopCoord = this.elem.getBoundingClientRect().top + window.pageYOffset;
-      // TODO: chek these conditions
+      // TODO: check these conditions
       if (window.pageYOffset > initialTopCoord || window.pageYOffset != document.documentElement.clientHeight) {
 
         let leftIndent = Math.min(
