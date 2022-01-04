@@ -56,7 +56,7 @@ export default class StepSlider {
 
   pointerEvent = event => {
     event.preventDefault();
-    const thumb = this.slider.querySelector('.slider__thumb');
+    let thumb = this.slider.querySelector('.slider__thumb');
     thumb.ondragstart = () => false;
 
     this.slider.classList.add('slider_dragging');
@@ -77,7 +77,7 @@ export default class StepSlider {
 
     this.value = Math.round(clickPos * (this.steps - 1));
 
-    const sliderValue = this.slider.querySelector('.slider__value');
+    let sliderValue = this.slider.querySelector('.slider__value');
     const elems = this.slider.querySelectorAll('.slider__steps span');
 
     elems.forEach(el => el.classList.remove('slider__step-active'));
