@@ -54,7 +54,7 @@ export default class StepSlider {
     this.slider.querySelector('.slider__progress').style.width = `${targetPoint / (this.steps - 1) * 100}%`;
   }
 
-  pointerEvent(event) {
+  pointerEvent = event => {
     event.preventDefault();
     const thumb = this.slider.querySelector('.slider__thumb');
     thumb.ondragstart = () => false;
@@ -65,7 +65,7 @@ export default class StepSlider {
     document.addEventListener('pointerup', this.pointerUp);
   }
 
-  pointerMove = (event) => {
+  pointerMove = event => {
     event.preventDefault();
 
     const clickPos = (event.clientX - this.slider.getBoundingClientRect().left) / this.slider.offsetWidth;
