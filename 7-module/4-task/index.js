@@ -43,8 +43,8 @@ export default class StepSlider {
   toTargetStep(targetPoint) {
     this.value = targetPoint;
 
-    const sliderValue = this.slider.querySelector('.slider__value');
-    const elems = this.slider.querySelectorAll('.slider__steps span');
+    let sliderValue = this.slider.querySelector('.slider__value');
+    let elems = this.slider.querySelectorAll('.slider__steps span');
 
     elems.forEach(el => el.classList.remove('slider__step-active'));
     elems[targetPoint].classList.add('slider__step-active');
@@ -68,7 +68,7 @@ export default class StepSlider {
   pointerMove = event => {
     event.preventDefault();
 
-    const clickPos = (event.clientX - this.slider.getBoundingClientRect().left) / this.slider.offsetWidth;
+    let clickPos = (event.clientX - this.slider.getBoundingClientRect().left) / this.slider.offsetWidth;
     if (clickPos < 0) { clickPos = 0; }
     else if (clickPos > 1) { clickPos = 1; }
 
@@ -78,7 +78,7 @@ export default class StepSlider {
     this.value = Math.round(clickPos * (this.steps - 1));
 
     let sliderValue = this.slider.querySelector('.slider__value');
-    const elems = this.slider.querySelectorAll('.slider__steps span');
+    let elems = this.slider.querySelectorAll('.slider__steps span');
 
     elems.forEach(el => el.classList.remove('slider__step-active'));
     elems[this.value].classList.add('slider__step-active');
